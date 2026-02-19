@@ -1,0 +1,15 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: fda_pg
+    environment:
+      POSTGRES_USER: fda
+      POSTGRES_PASSWORD: fda_password
+      POSTGRES_DB: fda_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - fda_pg_data:/var/lib/postgresql/data
+
+volumes:
+  fda_pg_data:

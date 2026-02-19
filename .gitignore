@@ -1,0 +1,22 @@
+# Python junk
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets / env files
+.env
+.env.*
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# Editor / OS
+.vscode/
+.DS_Store
