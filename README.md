@@ -8,7 +8,7 @@ The main idea is RAG, which stands for retrieval augmented generation. In this p
 
 Quick FDA context: the FDA is the U.S. Food and Drug Administration. They publish official drug labeling that includes sections like indications and usage, dosage and administration, warnings and precautions, adverse reactions, and other safety notes. openFDA is an FDA-supported way to access parts of that labeling data through an API.
 
-**Tech stack and components:**
+**Components:**
 
 Backend
 FastAPI with Uvicorn runs the API endpoints. It fetches labels from openFDA, extracts relevant sections, saves them into PostgreSQL, chunks the sections, runs retrieval, and returns answers with evidence.
@@ -26,6 +26,19 @@ Sentence Transformers all MiniLM L6 v2. It produces 384-dimensional vectors.
 
 LLM for final explanation
 Google Gemini, 2.5 Flash. It takes the retrieved FDA label chunks and explains them in simple words while keeping the response tied to evidence.
+
+**Tech Stack**
+
+- Python FastAPI and Uvicorn (backend API)
+- Streamlit (frontend UI)
+- PostgreSQL (storage)
+- SQLAlchemy (DB access)
+- Sentence-transformers and PyTorch (embeddings)
+- Google Gemini API (generation)
+-  openFDA Drug Label API (data source)
+-  Docker 
+
+
 
 **Data source link for openFDA**
 https://open.fda.gov/
